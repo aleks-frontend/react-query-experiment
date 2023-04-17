@@ -3,12 +3,12 @@ import axios from "axios";
 
 const SuperHeroesPage = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
   const [data, setData] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/superheroes")
+      .get("http://localhost:4000/superheroes1")
       .then((res) => {
         console.log(res);
         setIsLoading(false);
@@ -21,7 +21,6 @@ const SuperHeroesPage = () => {
             setError("failed to fetch");
         }
         setIsLoading(false);
-        console.log(err);
       });
   }, []);
 
